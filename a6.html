@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            #name{color: #ff6a00;font-size: 36px;}
+         </style>
+     </head>
+     <body>
+         <ul>
+             <li>抽奖：<strong id="name">豪华大奖等你拿</strong></li>
+             <li><button id="btn">点击抽奖</button></li>
+         </ul>
+         <script>
+             var oName =document.getElementById('name');
+             var oBtn =document.getElementById('btn');
+             var gift =["劳力士腕表","手机","冰箱","彩电","洗衣机","空调","旧电视"]；
+             var i=0;
+             oBtn.onclick=function(){
+                 view();
+             }
+             function view(){
+                 i++;
+                  console.log(i);
+                  setTimeout(view(),200)
+                 //数组的随机下标
+                 var rand=Math.random()*gift.length;
+                oName.innerHTML=gift[rand];
+                
+             }
+         </script>
+     </body>
+     </html>

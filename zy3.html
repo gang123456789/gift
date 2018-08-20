@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<h>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>天赐神器</h1>
+    <div id="food">
+        <div id="close">
+            <ul>
+                <li>
+                    <dl>
+                        <dt><img src="images/t-3.jpg"></dt>
+                        <dd>屠龙屠龙</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt><img src="images/t8_13.jpg"></dt>
+                        <dd>雷神屠龙</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt><img src="images/t2_05.jpg"></dt>
+                        <dd>精灵屠龙</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt><img src="images/t8_12.jpg"></dt>
+                        <dd>破灭屠龙</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt><img src="images/t5_07.jpg"></dt>
+                        <dd>屠龙屠龙</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt><img src="images/t8_07.jpg"></dt>
+                        <dd>屠龙屠龙</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt><img src="images/t6_15.jpg"></dt>
+                        <dd>屠龙屠龙</dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt><img src="images/t5_13.jpg"></dt>
+                        <dd>屠龙屠龙</dd>
+                    </dl>
+                </li>
+                <li class="nin">
+                    <dl class="mid">
+                        <dt class="middle" id="btn"><img src="images/t5_07.jpg" id="pic"></dt>
+                        
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+     //初始化变量
+     var oLi=document.getElementsByTagName("li");
+     var oBtn=document.getElementById("btn");
+     var oPic=document.getElementById('pic');
+     var num=i=t=0;//计数器（顺时针）
+     oBtn.onclick = function(){
+         oPic.style.transform="scale(0.6)";
+         oPic.style.transform="1s";
+
+     }
+         view();//动画视图
+
+    function view(){
+         num =parseInt(Math.random()*10+20);//确定顺时针循环个数（变化）
+             console.log("固态:"+num);
+        if(i<num){//已完成的li循环次数
+        i++;//每循环完一个li标签+1
+             setTimeout(view,200);
+             console.log("动态:"+i);
+
+        }else{
+           
+          oPic.style.transform="scale(0.8)";
+          oPic.style.transform="1s";
+            i=0;//为下一次抽奖做准备
+        }
+
+        //动画，t：顺时针循环中每个li标签的下标
+        if(t<oLi.length-1){//先清除所有，在设置一个
+         for(var j=0;j<oLi.lenght-1;j++){
+            oLi[j].style.border="2px solid #000";
+            oLi[j].style.background="#fff";  
+         }
+            oLi[t].style.border="2px solid #f00";
+            oLi[t].style.background="rgba(255,0,0.4)";
+            t++;
+
+        }else{
+            t=0;
+        }
+
+
+     }
+    </script>
+</body>
+</html>
